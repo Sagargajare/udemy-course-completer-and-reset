@@ -1,0 +1,12 @@
+{
+  "name": "Udemy Progress Reset and Completer",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Open"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "permissions": ["activeTab", "scripting"]
+}
