@@ -34,7 +34,9 @@ I wanted to reset my courses on Udemy to start over and complete them. I couldn'
 - Reset course progress
 - Mark course as completed
 
+## Demo
 
+![Demo](/assets/demo.gif)
 ## Support me
 Leave a star ⭐ if you like it.
 
