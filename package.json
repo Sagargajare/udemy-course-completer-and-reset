@@ -1,6 +1,6 @@
 {
   "name": "udemy-course-progress-reset-and-completer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A chrome extension to reset and complete full course on udemy",
   "main": "src/popup.js",
   "devDependencies": {
