@@ -32,30 +32,6 @@ var options = {
   },
   module: {
     rules: [
-      // {
-      //     // look for .css or .scss files
-      //     test: /\.(css|scss)$/,
-      //     // in the `src` directory
-      //     use: [
-      //         {
-      //             loader: 'style-loader',
-      //         },
-      //         {
-      //             loader: 'css-loader',
-      //         },
-      //         {
-      //             loader: 'sass-loader',
-      //             options: {
-      //                 sourceMap: true,
-      //             },
-      //         },
-      //     ],
-      // },
-      // {
-      //     test: new RegExp('.(' + fileExtensions.join('|') + ')$'),
-      //     loader: 'file-loader?name=[name].[ext]',
-      //     exclude: /node_modules/,
-      // },
       {
         test: /\.html$/,
         loader: "html-loader",
@@ -80,12 +56,10 @@ var options = {
   },
   plugins: [
     new webpack.ProgressPlugin(),
-    // clean the build folder
     new CleanWebpackPlugin({
       verbose: true,
       cleanStaleWebpackAssets: false,
     }),
-    // expose and write the allowed env vars on the compiled bundle
     new webpack.EnvironmentPlugin(["NODE_ENV"]),
     new CopyWebpackPlugin({
       patterns: [
@@ -94,7 +68,6 @@ var options = {
           to: path.join(__dirname, "dist"),
           force: true,
           transform: function (content, path) {
-            // generates the manifest file using the package.json informations
             return Buffer.from(
               JSON.stringify(
                 {

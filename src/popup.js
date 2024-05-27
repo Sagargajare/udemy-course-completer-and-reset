@@ -1,3 +1,4 @@
+import "./styles.css";
 
 const resetProgress = document.getElementById("resetProgressbtn");
 const resetProgressUtil = () => {
