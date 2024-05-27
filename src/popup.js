@@ -3,16 +3,20 @@ import "./styles.css";
 const resetProgress = document.getElementById("resetProgressbtn");
 const resetProgressUtil = () => {
   console.log("Reset button clicked");
-  const sectionEl = document.querySelectorAll(
-    "section[data-purpose='sidebar'] div.udlite-btn"
+
+  const xpath = "/html/body/div[1]/div[1]/div/div/main/div/div[2]/section/div[2]/div/div/div/div[1]";
+  const results = [];
+  const query = document.evaluate(
+    xpath,
+    document,
+    null,
+    XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+    null
   );
-  sectionEl.forEach((section) => {
-    const isClosed =
-      section.parentElement
-        .querySelector("span")
-        .getAttribute("data-checked") !== "checked";
-    if (isClosed) section.click();
-  });
+  for (let i = 0, length = query.snapshotLength; i < length; ++i) {
+    results.push(query.snapshotItem(i));
+  }
+  results.map((el) => el.click());
 
   // Stores all checkboxes on the page, and clicks on any checkboxes on that currently checked
   const checkboxes = document.querySelectorAll("input[type='checkbox']");
@@ -44,16 +48,20 @@ resetProgress.addEventListener("click", async () => {
 const markAsComplete = document.getElementById("markascompletebtn");
 const markAsCompleteUtil = () => {
   console.log("Mark as complete button clicked");
-  const sectionEl = document.querySelectorAll(
-    "section[data-purpose='sidebar'] div.udlite-btn"
+
+  const xpath = "/html/body/div[1]/div[1]/div/div/main/div/div[2]/section/div[2]/div/div/div/div[1]";
+  const results = [];
+  const query = document.evaluate(
+    xpath,
+    document,
+    null,
+    XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+    null
   );
-  sectionEl.forEach((section) => {
-    const isClosed =
-      section.parentElement
-        .querySelector("span")
-        .getAttribute("data-checked") !== "checked";
-    if (isClosed) section.click();
-  });
+  for (let i = 0, length = query.snapshotLength; i < length; ++i) {
+    results.push(query.snapshotItem(i));
+  }
+  results.map((el) => el.click());
 
   // Stores all checkboxes on the page, and clicks on any checkboxes on that currently checked
   const checkboxes = document.querySelectorAll("input[type='checkbox']");
